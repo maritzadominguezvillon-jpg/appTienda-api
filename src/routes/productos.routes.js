@@ -2,7 +2,10 @@ import { Router } from 'express';
 
 import {
     listarProductos,
-    guardarProducto
+    obtenerProducto,
+    guardarProducto,
+    actualizarProducto,
+    eliminarProducto
 }
 from '../controladores/productosCtrl.js';
 
@@ -15,10 +18,26 @@ router.get(
     listarProductos
 );
 
+router.get(
+    '/productos/:id',
+    obtenerProducto
+);
+
 router.post(
     '/productos',
     upload.single('imagen'),
     guardarProducto
+);
+
+router.put(
+    '/productos/:id',
+    upload.single('imagen'),
+    actualizarProducto
+);
+
+router.delete(
+    '/productos/:id',
+    eliminarProducto
 );
 
 export default router;
