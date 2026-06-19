@@ -55,6 +55,8 @@ export const obtenerProducto = async (req, res) => {
 
 // GUARDAR PRODUCTO
 export const guardarProducto = async (req, res) => {
+    console.log(req.body);
+    console.log(req.file);
 
     try {
 
